@@ -49,3 +49,18 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'jquery-rails'
+gem 'popper_js'
+gem 'sorcery'
+gem 'slim-rails'
+gem 'redis-rails'
+gem 'rails-i18n'
+gem 'annotate'
+gem 'rubocop'
+gem 'rubocop-rails'
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'pry-byebug'
+gem 'pry-rails'
+gem 'html2slim'
+gem 'font-awesome-sass', '~> 5.4.1'
