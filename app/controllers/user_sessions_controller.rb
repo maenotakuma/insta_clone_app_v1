@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class UserSessionsController < ApplicationController
   def new; end
+
   def create
     @user = login(params[:email], params[:password])
     if @user
@@ -9,6 +12,7 @@ class UserSessionsController < ApplicationController
       render :new
     end
   end
+
   def destroy
     logout
     redirect_to root_path, success: 'ログアウトしました'
