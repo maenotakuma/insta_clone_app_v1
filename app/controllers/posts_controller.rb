@@ -36,7 +36,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-  end
+    @comments = @post.comments.includes(:user).order(created_at: :desc)
+    @comment = Comment.new
+end
 
   def destroy
     @post = current_user.posts.find(params[:id])

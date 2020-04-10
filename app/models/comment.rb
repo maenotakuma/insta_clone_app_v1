@@ -1,4 +1,4 @@
-class Comment < ApplicationRecord
+
   # == Schema Information
   #
   # Table name: comments
@@ -24,5 +24,7 @@ class Comment < ApplicationRecord
   class Comment < ApplicationRecord
     belongs_to :user
     belongs_to :post
+
+    validates :body, presence: true, length: { maximum: 1000 }
   end
-end
+
