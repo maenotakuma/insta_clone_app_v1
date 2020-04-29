@@ -51,6 +51,11 @@ class PostsController < ApplicationController
     redirect_to posts_path, success: '投稿を削除しました'
   end
 
+  def search
+
+    @posts = @search_forms.search.includes(:user).page(params[:page])
+  end
+
   private
 
   def post_params
