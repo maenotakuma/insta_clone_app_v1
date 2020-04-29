@@ -18,7 +18,6 @@
 #  fk_rails_...  (user_id => users.id)
 #
 
-
 class Post < ApplicationRecord
   belongs_to :user
   mount_uploaders :images, PostImageUploader
@@ -30,4 +29,6 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: :user
+
+  scope :body_contain, ->(word) { where('body LIKE ?', "%#{word}%") }
 end
