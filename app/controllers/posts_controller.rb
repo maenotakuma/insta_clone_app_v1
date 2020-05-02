@@ -52,7 +52,6 @@ class PostsController < ApplicationController
   end
 
   def search
-
     @posts = @search_forms.search.includes(:user).page(params[:page])
   end
 
