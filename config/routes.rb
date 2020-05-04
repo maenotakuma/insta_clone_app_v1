@@ -19,8 +19,6 @@ Rails.application.routes.draw do
     resource :account, only: %i[edit update]
   end
 
-
-
   constraints ->(request) { request.session[:user_id].present? } do
     # ログインしてる時のルートパス
     root 'posts#index'
