@@ -73,6 +73,4 @@ class User < ApplicationRecord
   def feed
     Post.where(user_id: following_ids << id)
   end
-
-
 end
