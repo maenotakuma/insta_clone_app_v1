@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_000335) do
     t.datetime "updated_at", null: false
     t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "activities", "users"
