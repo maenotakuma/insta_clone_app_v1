@@ -68,5 +68,6 @@ gem 'redis-rails'
 gem 'rubocop'
 gem 'rubocop-rails'
 gem 'slim-rails'
+gem 'sidekiq'
 gem 'sorcery'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
