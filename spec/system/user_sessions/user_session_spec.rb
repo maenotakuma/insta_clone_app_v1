@@ -5,18 +5,19 @@ RSpec.describe 'ログイン・ログアウト', type: :system do
 
   describe 'ログイン' do
     context '認証情報が正しい場合' do
-      it 'ユーザー登録ができること' do
+      it 'ログインできること' do
         visit login_path
         fill_in 'メールアドレス', with: user.email
         fill_in 'パスワード', with: '12345678'
         click_button 'ログイン'
-        expect(current_path).to eq posts_path
+        expect(current_path).to eq root_path
+        #リロードしたらログイン後のページへ
         expect(page).to have_content 'ログインしました'
       end
     end
 
     context '認証情報に誤りがある場合' do
-      it 'ユーザー登録ができること' do
+      it 'ログインできないこと' do
         visit login_path
         fill_in 'メールアドレス', with: user.email
         fill_in 'パスワード', with: '1234'
